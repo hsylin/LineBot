@@ -1,88 +1,85 @@
-# Toc2022
+# LineBot
 
-## 前言
-由於海底疫情肆虐，蟹老闆決定推出線上服務以促進來客率，並藉由線上訂位來避免因違反防疫規定遭到政府罰錢。
+## Introduction
+Due to the ongoing underwater pandemic, Mr. Krabs has decided to launch an online service to increase customer traffic. By utilizing online reservations, the restaurant aims to avoid government fines for violating pandemic restrictions.
 
-## 環境
-- ubuntu 20.04
-- python 3.8.10
+## Environment
+- Ubuntu 20.04
+- Python 3.8.10
 
-## 使用教學
-1. install `pipenv`
-```shell
-pip3 install pipenv
-```
-2. install 所需套件
-```shell
-pipenv install --three
-// 若遇到pygraphviz安裝失敗，則嘗試下面這行
-sudo apt-get install graphviz graphviz-dev
-```
-3. 從`.env.sample`產生出一個`.env`，並填入以下兩個資訊
+## Instructions
 
-- Line
-    - LINE_CHANNEL_SECRET
-    - LINE_CHANNEL_ACCESS_TOKEN
+1. Install `pipenv`
+    ```bash
+    pip3 install pipenv
+    ```
 
-4. install `ngrok`
+2. Install the required packages
+    ```bash
+    pipenv install --three
+    # If pygraphviz installation fails, try the following:
+    sudo apt-get install graphviz graphviz-dev
+    ```
 
-```shell
-sudo snap install ngrok
-```
-5. run `ngrok` to deploy Line Chat Bot locally
-```shell
-ngrok http 8000
-```
-6. execute app.py
-```shell
-python3 app.py
-```
+3. Create a `.env` file from `.env.sample`, and fill in the following information:
+    - **Line**
+        - `LINE_CHANNEL_SECRET`
+        - `LINE_CHANNEL_ACCESS_TOKEN`
 
-## 功能
--加入好友訊息
-- 訂位
-    - 人數
-    - 時間
-* 查看菜單
-* 查看餐廳位置
-* 餐廳人員介紹
-* 問卷調查
+4. Install `ngrok`
+    ```bash
+    sudo snap install ngrok
+    ```
 
-## 使用示範
+5. Run `ngrok` to deploy the Line Chat Bot locally:
+    ```bash
+    ngrok http 8000
+    ```
 
-### 加入好友訊息
-![]( https://img.onl/DqAJfe)
+6. Execute `app.py`
+    ```bash
+    python3 app.py
+    ```
 
-### 訂位
-![]( https://img.onl/G7Yol)
+## Features
+- Welcome message when added as a friend
+- Reservation:
+    - Number of people
+    - Reservation time
+- View menu
+- View restaurant location
+- Meet the restaurant staff
+- Customer survey
 
-### 查看菜單
-![]( https://img.onl/C73X5L)
-### 查看餐廳位置
-![]( https://img.onl/mEPP2x)
-### 餐廳人員介紹
-![]( https://img.onl/Ce519F) 
-### 問卷調查
-![]( https://img.onl/wBo1S5)
-## FSM
-![](https://img.onl/zQ4JtS)
-### state說明
-- user: 輸入蟹堡王開始使用線上服務
-- choose: 選擇需要的服務
-- reserve_people:訂位人數
-- reserve_time: 訂位時間
-- reserve_result: 訂位結果
-- menu: 查看菜單
-- location: 查看餐廳位置
-- employee:餐廳人員介紹
+## Demonstration
 
+### Welcome Message
+![Welcome Message](https://img.onl/DqAJfe)
 
-## Bonus
+### Reservation
+![Reservation](https://img.onl/G7Yol)
 
+### View Menu
+![View Menu](https://img.onl/C73X5L)
 
-- Deploy on Heroku
-![](https://img.onl/UdErez)
-- Line API 
+### View Restaurant Location
+![View Location](https://img.onl/mEPP2x)
 
-- image
-- video
+### Meet the Staff
+![Meet Staff](https://img.onl/Ce519F)
+
+### Customer Survey
+![Survey](https://img.onl/wBo1S5)
+
+## Finite State Machine (FSM)
+![FSM](https://img.onl/zQ4JtS)
+
+### State Descriptions
+- **user**: Enter "Krabby Patty" to start using the online service
+- **choose**: Select the desired service
+- **reserve_people**: Enter the number of people for the reservation
+- **reserve_time**: Select the reservation time
+- **reserve_result**: View the reservation details
+- **menu**: View the restaurant menu
+- **location**: View the restaurant location
+- **employee**: Meet the restaurant staff
