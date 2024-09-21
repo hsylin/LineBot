@@ -1,4 +1,4 @@
-# LineBot
+# Krabby Patty Line Bot
 
 ## Introduction
 Due to the ongoing underwater pandemic, Mr. Krabs has decided to launch an online service to increase customer traffic. By utilizing online reservations, the restaurant aims to avoid government fines for violating pandemic restrictions.
